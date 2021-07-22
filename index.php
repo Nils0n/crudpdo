@@ -39,11 +39,17 @@ if (isset($_POST['name'])) {
 
         if (!empty($name) && !empty($telephone) && !empty($email)) {
             if (!$p->registerPessoa($name, $telephone, $email)) {
-                echo "e-mail já cadastraddo";
-            }
+                ?>
+                 <div class="erro-email">
+                  <script> alert('E-MAIL JÁ CADASTRADO'); </script>
+                 </div><?php
+}
         } else {
-            echo " Por favor preencha todos os Campos!";
-        }
+            ?>
+          <div class="erro-email">
+           <script> alert('POR FAVOR PREENCHA TODOS OS CAMPOS'); </script>
+          </div><?php
+}
     }
 
 }
